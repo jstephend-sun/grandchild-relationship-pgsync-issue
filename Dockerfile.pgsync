@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+# Install curl + git
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl git \
+ && rm -rf /var/lib/apt/lists/*
+
+# Install pgsync from the commit
+RUN pip install --no-cache-dir \
+    git+https://github.com/toluaina/pgsync@cf82dacc7b6c0ff04b93087243725deeb31baf8a
+
+WORKDIR /pgsync

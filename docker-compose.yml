@@ -1,0 +1,104 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: repro_redis
+    restart: always
+    command: redis-server --appendonly yes
+
+  postgres:
+    image: postgres:15
+    restart: always
+    container_name: repro_postgres
+    environment:
+      PGUSER: repro_meetsone
+      POSTGRES_USER: repro_meetsone
+      POSTGRES_PASSWORD: repro_meetsone
+      POSTGRES_DB: repro_meetsone
+      TZ: 'Asia/Tokyo'
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+    command: >
+      postgres
+      -c wal_level=logical
+      -c max_wal_senders=30
+      -c max_replication_slots=30
+      -c wal_keep_size=1024
+
+  opensearch:
+    image: opensearchproject/opensearch:2.12.0
+    restart: always
+    container_name: repro_opensearch
+    environment:
+      - discovery.type=single-node
+      - DISABLE_SECURITY_PLUGIN=true 
+      - DISABLE_INSTALL_DEMO_CONFIG=true   
+      - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
+      - http.host=0.0.0.0
+      - transport.host=127.0.0.1
+      - http.port=${OPENSEARCH_PORT:-9200}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    volumes:
+      - ./opensearch/opensearch.yml:/usr/share/opensearch/config/opensearch.yml:ro
+    healthcheck:
+      test: ["CMD", "bash", "-lc", "curl -s http://localhost:9200 >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  dashboards:
+    image: opensearchproject/opensearch-dashboards:2.12.0
+    restart: always
+    container_name: repro_dashboards
+    environment:
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
+      - OPENSEARCH_HOSTS=http://opensearch:${OPENSEARCH_PORT:-9200}
+    ports:
+      - "5601:5601"
+    depends_on:
+      opensearch:
+        condition: service_healthy
+
+  pgsync:
+    build:
+      context: .
+      dockerfile: Dockerfile.pgsync
+    image: python:3.11-slim
+    container_name: repro_pgsync
+    working_dir: /pgsync
+    depends_on:
+      - postgres
+      - opensearch
+      - redis
+    environment:
+      # Postgres
+      PG_HOST: postgres
+      PG_PORT: "5432"
+      PG_USER: repro_meetsone
+      PG_PASSWORD: repro_meetsone
+      PG_DATABASE: repro_meetsone
+      # OpenSearch
+      OPENSEARCH: "True"
+      ELASTICSEARCH: "False"
+      ELASTICSEARCH_SCHEME: http
+      ELASTICSEARCH_HOST: opensearch
+      ELASTICSEARCH_PORT: "9200"
+      REDIS_HOST: repro_redis
+      REDIS_PORT: "6379"
+    volumes:
+      - ./pgsync:/pgsync
+    # Install pgsync at your commit and run it once with your schema
+    command: >
+      bash -lc "
+        for i in {1..60}; do
+          curl -s http://opensearch:9200 >/dev/null && break; sleep 2;
+        done &&
+        pgsync --config /pgsync/schema.json
+      "
