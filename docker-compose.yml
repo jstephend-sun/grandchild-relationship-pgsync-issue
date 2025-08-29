@@ -92,13 +92,20 @@ services:
       ELASTICSEARCH_PORT: "9200"
       REDIS_HOST: repro_redis
       REDIS_PORT: "6379"
+      # Enable streaming mode
+      ELASTICSEARCH_STREAMING_BULK: "True"
+      POLL_INTERVAL: "0.2"
     volumes:
       - ./pgsync:/pgsync
     # Install pgsync at your commit and run it once with your schema
     command: >
       bash -lc "
+        echo '==> Waiting for OpenSearch…' &&
         for i in {1..60}; do
           curl -s http://opensearch:9200 >/dev/null && break; sleep 2;
         done &&
-        pgsync --config /pgsync/schema.json
+        echo '==> Bootstrapping schema…' &&
+        pgsync bootstrap --config /pgsync/schema.json || true &&
+        echo '==> Starting streaming daemon…' &&
+        pgsync --config /pgsync/schema.json --daemon
       "

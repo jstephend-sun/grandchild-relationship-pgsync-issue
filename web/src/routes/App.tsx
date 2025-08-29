@@ -28,6 +28,7 @@ export default function App() {
       <nav style={{ display: 'flex', alignItems: 'center', gap: 8, padding: 16, borderBottom: '1px solid #ddd' }}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/create-course">Create Course</NavLink>
+        <NavLink to="/create-student">Create Student</NavLink>
       </nav>
       <main style={{ padding: 16 }}>
         <Outlet />

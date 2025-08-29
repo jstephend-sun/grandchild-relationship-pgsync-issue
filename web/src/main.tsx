@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './routes/App';
 import Home from './routes/Home';
 import CreateCourse from './routes/CreateCourse';
+import CreateStudent from './routes/CreateStudent';
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'create-course', element: <CreateCourse /> },
+      { path: 'create-student', element: <CreateStudent /> },
     ],
   },
 ]);
