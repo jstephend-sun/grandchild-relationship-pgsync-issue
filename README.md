@@ -21,7 +21,9 @@ After performing the setup, to replicate the issue in P1 do the following steps.
 
 <details>
 <summary>Confirm Fix is Working</summary>
+  
   [confirm fix is working.webm](https://github.com/user-attachments/assets/aa300e01-21f1-4593-b0ec-091b2ef5340b)
+  
 </details>
 
 ## Replicating the issue
@@ -32,7 +34,9 @@ After performing the setup, to replicate the issue in P1 do the following steps.
 
 <details>
 <summary>Confirm Fix is Working</summary>
+  
   [confirm issue.webm](https://github.com/user-attachments/assets/586fe269-8b17-47b2-aa2b-5a42b1aa8cde)
+  
 </details>
 
 ## Setup
