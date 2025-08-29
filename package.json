@@ -9,7 +9,7 @@
     "setup": "yarn --cwd server install && yarn --cwd web install",
     "dev": "concurrently -k -n server,web -c blue,green \"yarn --cwd server dev\" \"yarn --cwd web dev\"",
     "db:reset": "bash scripts/reset-db.sh",
-    "pgsync:recreate": "bash scripts/pgsync-recreate.sh"
+    "pgsync:recreate": "bash scripts/pgsync-recreate.sh && docker compose up pgsync -d"
   },
   "devDependencies": {
     "concurrently": "^9.0.1"

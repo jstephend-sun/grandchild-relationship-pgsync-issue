@@ -8,12 +8,12 @@ type Course = {
 };
 
 export default function CreateStudent() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [firstName, setFirstName] = useState('S1');
+  const [lastName, setLastName] = useState('S1');
+  const [email, setEmail] = useState('s1@mail.com');
+  const [phone, setPhone] = useState('112211');
   const [isActive, setIsActive] = useState(true);
-  const [enrolledAt, setEnrolledAt] = useState(''); // YYYY-MM-DD
+  const [enrolledAt, setEnrolledAt] = useState('2025-08-29'); // YYYY-MM-DD
   const [courseId, setCourseId] = useState<string>('');
 
   const [courses, setCourses] = useState<Course[]>([]);

@@ -10,13 +10,13 @@ export default function CreateCourse() {
   const [defaults, setDefaults] = useState<SubjectOption[]>([]);
   const [loadingDefaults, setLoadingDefaults] = useState(true);
 
-  const [title, setTitle] = useState('');
-  const [code, setCode] = useState('');
-  const [description, setDescription] = useState('');
-  const [startDate, setStartDate] = useState(''); // ISO (YYYY-MM-DD)
-  const [endDate, setEndDate] = useState('');
+  const [title, setTitle] = useState('A1');
+  const [code, setCode] = useState('A1');
+  const [description, setDescription] = useState('A1');
+  const [startDate, setStartDate] = useState('2025-08-20'); // ISO (YYYY-MM-DD)
+  const [endDate, setEndDate] = useState('2025-08-29');
   const [baseSubjectId, setBaseSubjectId] = useState<string>('');
-  const [secondarySubjectName, setSecondarySubjectName] = useState('');
+  const [secondarySubjectName, setSecondarySubjectName] = useState('A1');
 
   const [submitting, setSubmitting] = useState(false);
   const [err, setErr] = useState<string | null>(null);

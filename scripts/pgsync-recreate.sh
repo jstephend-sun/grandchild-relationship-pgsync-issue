@@ -17,13 +17,8 @@ curl -s -X DELETE "${OS_URL}/${INDEX}" >/dev/null || true
 echo "==> Bootstrap (creates replication slot, validates schema)"
 docker compose run --rm "$PGSYNC_SERVICE" sh -lc 'bootstrap --config /pgsync/schema.json'
 
-echo "==> Run pgsync one-off (fail fast on errors)"
-docker compose up \
-  --no-deps \
-  --force-recreate \
-  --abort-on-container-exit \
-  --exit-code-from "$PGSYNC_SERVICE" \
-  "$PGSYNC_SERVICE"
+echo "==> Run one-off sync"
+docker compose run --rm "$PGSYNC_SERVICE" sh -lc 'pgsync --config /pgsync/schema.json'
 
 echo "==> Sample doc:"
 curl -s "${OS_URL}/${INDEX}/_search?size=1&pretty" || true
