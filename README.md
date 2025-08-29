@@ -19,12 +19,10 @@ After performing the setup, to replicate the issue in P1 do the following steps.
 > specifically the "subjects" grandchild, whether there is proper data or null, that is the issue
 4. when you want to test another setup, you can start from step#3 of ##Setup
 
-<summary>
-Confirm Fix is Working
-<detail>
+<details>
+<summary>Confirm Fix is Working</summary>
   [confirm fix is working.webm](https://github.com/user-attachments/assets/aa300e01-21f1-4593-b0ec-091b2ef5340b)
-</detail>
-</summary>
+</details>
 
 ## Replicating the issue
 1. The most plausible cause of the issue why there are saved `[null, null]` records in the grandchild table can be found in `server/prisma/migrations/20250828111439_remove_and_restore_replica/migration.sql`
@@ -32,12 +30,10 @@ Confirm Fix is Working
 3. Perform the same steps from ##Description
 4. In opensearch dashboards, the saved data is `[null, null]`
 
-<summary>
-Confirm Issue
-<detail>
+<details>
+<summary>Confirm Fix is Working</summary>
   [confirm issue.webm](https://github.com/user-attachments/assets/586fe269-8b17-47b2-aa2b-5a42b1aa8cde)
-</detail>
-</summary>
+</details>
 
 ## Setup
 1. in root, run `yarn install` and `yarn setup`
