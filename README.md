@@ -65,3 +65,8 @@ GET /students/_search
   ]
 }
 ```
+
+### retrying steps
+- docker compose down -v
+- docker compose build --no-cache pgsync
+- docker compose up -d --build --force-recreate
