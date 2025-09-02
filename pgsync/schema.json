@@ -1,54 +1,25 @@
 [
   {
-    "database": "repro_meetsone",
+    "database": "mre_meetsone",
     "index": "students",
     "nodes": {
       "table": "Student",
-      "columns": [
-        "id",
-        "firstName",
-        "lastName",
-        "email",
-        "phone",
-        "isActive",
-        "enrolledAt",
-        "createdAt",
-        "updatedAt"
-      ],
+      "columns": ["id", "first_name"],
       "children": [
         {
           "table": "Course",
           "label": "course",
-          "columns": [
-            "id",
-            "title",
-            "code",
-            "description",
-            "startDate",
-            "endDate",
-            "createdAt",
-            "updatedAt"
-          ],
-          "relationship": {
-            "variant": "object",
-            "type": "one_to_one"
-          },
+          "columns": ["id", "title"],
+          "relationship": { "variant": "object", "type": "one_to_one" },
           "children": [
             {
               "table": "Subject",
               "label": "subjects",
-              "columns": [
-                "id",
-                "name",
-                "category",
-                "description",
-                "createdAt",
-                "updatedAt"
-              ],
+              "columns": ["id", "name"],
               "relationship": {
                 "variant": "object",
                 "type": "one_to_many",
-                "through_tables": ["_CourseSubject"]
+                "through_tables": ["_Course_Subject"]
               }
             }
           ]
@@ -57,36 +28,17 @@
     },
     "mapping": {
       "id": { "type": "keyword" },
-      "firstName": { "type": "text" },
-      "lastName": { "type": "text" },
-      "email": { "type": "keyword" },
-      "phone": { "type": "keyword" },
-      "isActive": { "type": "boolean" },
-      "enrolledAt": { "type": "date" },
-      "createdAt": { "type": "date" },
-      "updatedAt": { "type": "date" },
-
+      "first_name": { "type": "keyword" },
       "course": {
         "type": "object",
         "properties": {
           "id": { "type": "keyword" },
-          "title": { "type": "text" },
-          "code": { "type": "keyword" },
-          "description": { "type": "text" },
-          "startDate": { "type": "date" },
-          "endDate": { "type": "date" },
-          "createdAt": { "type": "date" },
-          "updatedAt": { "type": "date" },
-
+          "title": { "type": "keyword" },
           "subjects": {
-            "type": "nested",
+            "type": "object",
             "properties": {
               "id": { "type": "keyword" },
-              "name": { "type": "text" },
-              "category": { "type": "keyword" },
-              "description": { "type": "text" },
-              "createdAt": { "type": "date" },
-              "updatedAt": { "type": "date" }
+              "name": { "type": "keyword" }
             }
           }
         }

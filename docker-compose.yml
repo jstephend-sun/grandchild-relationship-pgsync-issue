@@ -1,24 +1,26 @@
+version: '3.9'
 services:
   redis:
     image: redis:7-alpine
-    container_name: repro_redis
+    container_name: mre_redis
     restart: always
     command: redis-server --appendonly yes
 
   postgres:
     image: postgres:15
+    container_name: mre_postgres
     restart: always
-    container_name: repro_postgres
     environment:
-      PGUSER: repro_meetsone
-      POSTGRES_USER: repro_meetsone
-      POSTGRES_PASSWORD: repro_meetsone
-      POSTGRES_DB: repro_meetsone
+      PGUSER: mre_meetsone
+      POSTGRES_USER: mre_meetsone
+      POSTGRES_PASSWORD: mre_meetsone
+      POSTGRES_DB: mre_meetsone
       TZ: 'Asia/Tokyo'
     ports:
       - "5432:5432"
     volumes:
-      - ./db/init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+      - ./db/00-init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+      - ./db/01-seed.sql:/docker-entrypoint-initdb.d/01-seed.sql:ro
     command: >
       postgres
       -c wal_level=logical
@@ -28,16 +30,16 @@ services:
 
   opensearch:
     image: opensearchproject/opensearch:2.12.0
+    container_name: mre_opensearch
     restart: always
-    container_name: repro_opensearch
     environment:
       - discovery.type=single-node
-      - DISABLE_SECURITY_PLUGIN=true 
-      - DISABLE_INSTALL_DEMO_CONFIG=true   
+      - DISABLE_SECURITY_PLUGIN=true
+      - DISABLE_INSTALL_DEMO_CONFIG=true
       - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
       - http.host=0.0.0.0
       - transport.host=127.0.0.1
-      - http.port=${OPENSEARCH_PORT:-9200}
+      - http.port=9200
     ulimits:
       memlock:
         soft: -1
@@ -45,21 +47,19 @@ services:
     ports:
       - "9200:9200"
       - "9600:9600"
-    volumes:
-      - ./opensearch/opensearch.yml:/usr/share/opensearch/config/opensearch.yml:ro
     healthcheck:
-      test: ["CMD", "bash", "-lc", "curl -s http://localhost:9200 >/dev/null"]
+      test: ["CMD", "curl", "-s", "http://localhost:9200"]
       interval: 10s
       timeout: 5s
       retries: 12
 
   dashboards:
     image: opensearchproject/opensearch-dashboards:2.12.0
+    container_name: mre_dashboards
     restart: always
-    container_name: repro_dashboards
     environment:
       - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
-      - OPENSEARCH_HOSTS=http://opensearch:${OPENSEARCH_PORT:-9200}
+      - OPENSEARCH_HOSTS=http://opensearch:9200
     ports:
       - "5601:5601"
     depends_on:
@@ -69,43 +69,66 @@ services:
   pgsync:
     build:
       context: .
-      dockerfile: Dockerfile.pgsync
-    image: python:3.11-slim
-    container_name: repro_pgsync
-    working_dir: /pgsync
+      dockerfile_inline: |
+        FROM python:3.11-slim
+        RUN apt-get update && apt-get install -y --no-install-recommends curl git postgresql-client \
+         && rm -rf /var/lib/apt/lists/* \
+         && pip install --no-cache-dir git+https://github.com/toluaina/pgsync@cf82dacc7b6c0ff04b93087243725deeb31baf8a
+        WORKDIR /pgsync
+        COPY entrypoint-pgsync.sh /entrypoint.sh
+        RUN chmod +x /entrypoint.sh
+        ENTRYPOINT ["/entrypoint.sh"]
+    container_name: mre_pgsync
     depends_on:
       - postgres
       - opensearch
       - redis
     environment:
-      # Postgres
       PG_HOST: postgres
       PG_PORT: "5432"
-      PG_USER: repro_meetsone
-      PG_PASSWORD: repro_meetsone
-      PG_DATABASE: repro_meetsone
-      # OpenSearch
+      PG_USER: mre_meetsone
+      PG_PASSWORD: mre_meetsone
+      PG_DATABASE: mre_meetsone
       OPENSEARCH: "True"
       ELASTICSEARCH: "False"
       ELASTICSEARCH_SCHEME: http
       ELASTICSEARCH_HOST: opensearch
       ELASTICSEARCH_PORT: "9200"
-      REDIS_HOST: repro_redis
+      REDIS_HOST: mre_redis
       REDIS_PORT: "6379"
-      # Enable streaming mode
       ELASTICSEARCH_STREAMING_BULK: "True"
       POLL_INTERVAL: "0.2"
+      CHECKPOINT_PATH: /pgsync
     volumes:
       - ./pgsync:/pgsync
-    # Install pgsync at your commit and run it once with your schema
-    command: >
+
+  inserter:
+    image: postgres:15
+    container_name: mre_inserter
+    depends_on:
+      - postgres
+      - opensearch
+    environment:
+      POSTGRES_USER: mre_meetsone
+      POSTGRES_PASSWORD: mre_meetsone
+      POSTGRES_DB: mre_meetsone
+    volumes:
+      - ./db/inserter.sh:/inserter.sh:ro
+    entrypoint: >
       bash -lc "
-        echo '==> Waiting for OpenSearch…' &&
-        for i in {1..60}; do
-          curl -s http://opensearch:9200 >/dev/null && break; sleep 2;
-        done &&
-        echo '==> Bootstrapping schema…' &&
-        pgsync bootstrap --config /pgsync/schema.json || true &&
-        echo '==> Starting streaming daemon…' &&
-        pgsync --config /pgsync/schema.json --daemon
+        apt-get update &&
+        apt-get install -y --no-install-recommends curl jq &&
+        /inserter.sh
       "
+  inserter_2:
+    image: postgres:15
+    container_name: mre_inserter_2
+    depends_on:
+      - inserter
+    volumes:
+      - ./db/inserter_2.sh:/inserter_2.sh:ro
+    environment:
+      POSTGRES_USER: mre_meetsone
+      POSTGRES_PASSWORD: mre_meetsone
+      POSTGRES_DB: mre_meetsone
+    entrypoint: [ "bash", "/inserter_2.sh" ]
