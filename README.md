@@ -16,7 +16,7 @@ when creating new records, grandchild relationship are being saved as [null, nul
   - you may end up needing to adjust the sleep time in `inserter.sh` and `inserter_2.sh` to allow for longer waits
   - just make sure that `inserter_2.sh` waits longer that `inserter.sh`
 
-then in opensearch dashboards, you can use these queries to view the available index
+then in [opensearch dashboards](http://localhost:5601/app/dev_tools#/console), you can use these queries to view the available index
 ```
 
 GET /students/_search
