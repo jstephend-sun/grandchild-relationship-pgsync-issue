@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "==> Sleeping 10s to let PGSync finish previous batch..."
+echo "==> Sleeping 20s to let PGSync finish previous batch..."
 sleep 20
 
 echo "==> Inserting additional students..."

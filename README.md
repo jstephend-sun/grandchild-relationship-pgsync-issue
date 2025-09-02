@@ -3,11 +3,17 @@ this is a standalone docker setup to show an issue with pgsync grandchild relati
 when creating new records, grandchild relationship are being saved as [null, null]
 
 ### steps
+- make the sh files executable 
+  - `chmod +x db/inserter.sh`
+  - `chmod +x db/inserter_2.sh`
+  - `chmod +x entrypoint-pgsync.sh`
 - docker compose build pgsync
 - docker compose up -d
 - then wait for these 2 containers to show success message
 - docker logs mre_inserter --tail=200
 - docker logs mre_inserter_2 --tail=200
+  - you may end up needing to adjust the sleep time in `inserter.sh` and `inserter_2.sh` to allow for longer waits
+  - just make sure that `inserter_2.sh` waits longer that `inserter.sh`
 
 then in opensearch dashboards, you can use these queries to view the available index
 ```
