@@ -8,6 +8,7 @@ when creating new records, grandchild relationship are being saved as [null, nul
   - `chmod +x db/inserter_2.sh`
   - `chmod +x entrypoint-pgsync.sh`
 - docker compose build pgsync
+  - you may need to do `pip install --upgrade pip` once
 - docker compose up -d
 - then wait for these 2 containers to show success message
 - docker logs mre_inserter --tail=200
