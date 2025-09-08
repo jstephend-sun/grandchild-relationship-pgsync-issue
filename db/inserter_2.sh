@@ -8,7 +8,7 @@ echo "==> Inserting additional students..."
 sleep 2
 
 for i in $(seq 16 25); do
-  id="stu_2_$i"
+  id=$(uuidgen)
   PGPASSWORD=$POSTGRES_PASSWORD psql -h postgres -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
     -c "INSERT INTO \"Student\"(id, first_name, courseId) VALUES ('$id', 'Name_$i', 'course_3');"
 done

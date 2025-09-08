@@ -73,7 +73,7 @@ services:
         FROM python:3.11-slim
         RUN apt-get update && apt-get install -y --no-install-recommends curl git postgresql-client \
          && rm -rf /var/lib/apt/lists/* \
-         && pip install --no-cache-dir git+https://github.com/toluaina/pgsync@cf82dacc7b6c0ff04b93087243725deeb31baf8a
+         && pip install --no-cache-dir git+https://github.com/toluaina/pgsync@f9e435548be7d077aea2596f53417bcebbb7805a
         WORKDIR /pgsync
         COPY entrypoint-pgsync.sh /entrypoint.sh
         RUN chmod +x /entrypoint.sh
@@ -117,7 +117,7 @@ services:
     entrypoint: >
       bash -lc "
         apt-get update &&
-        apt-get install -y --no-install-recommends curl jq &&
+        apt-get install -y --no-install-recommends curl jq uuid-runtime &&
         /inserter.sh
       "
   inserter_2:
@@ -131,4 +131,9 @@ services:
       POSTGRES_USER: mre_meetsone
       POSTGRES_PASSWORD: mre_meetsone
       POSTGRES_DB: mre_meetsone
-    entrypoint: [ "bash", "/inserter_2.sh" ]
+    entrypoint: >
+      bash -lc "
+        apt-get update &&
+        apt-get install -y --no-install-recommends uuid-runtime &&
+        /inserter_2.sh
+      "
