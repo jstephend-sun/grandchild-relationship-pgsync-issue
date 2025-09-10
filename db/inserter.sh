@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "==> Sleeping 15s to let PGSync sync seeded docs..."
-sleep 15
-
 echo "==> Creating a new M2M record..."
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -h postgres -U "$POSTGRES_USER" -d "$POSTGRES_DB" \

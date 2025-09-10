@@ -106,8 +106,8 @@ services:
     image: postgres:15
     container_name: mre_inserter
     depends_on:
-      - postgres
-      - opensearch
+      opensearch:
+        condition: service_healthy
     environment:
       POSTGRES_USER: mre_meetsone
       POSTGRES_PASSWORD: mre_meetsone
@@ -118,13 +118,21 @@ services:
       bash -lc "
         apt-get update &&
         apt-get install -y --no-install-recommends curl jq uuid-runtime &&
-        /inserter.sh
+        /inserter.sh &&
+        tail -f /dev/null
       "
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB -h postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
   inserter_2:
     image: postgres:15
     container_name: mre_inserter_2
     depends_on:
-      - inserter
+      inserter:
+        condition: service_healthy
     volumes:
       - ./db/inserter_2.sh:/inserter_2.sh:ro
     environment:
