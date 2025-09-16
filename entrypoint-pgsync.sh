@@ -16,4 +16,4 @@ echo "==> Bootstrapping schema..."
 bootstrap --config /pgsync/schema.json
 
 echo "==> Starting streaming daemon..."
-exec pgsync --config /pgsync/schema.json --daemon
+exec pgsync --config /pgsync/schema.json --daemon -v

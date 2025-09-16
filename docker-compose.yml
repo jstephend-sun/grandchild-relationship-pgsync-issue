@@ -73,7 +73,7 @@ services:
         FROM python:3.11-slim
         RUN apt-get update && apt-get install -y --no-install-recommends curl git postgresql-client \
          && rm -rf /var/lib/apt/lists/* \
-         && pip install --no-cache-dir git+https://github.com/toluaina/pgsync@f9e435548be7d077aea2596f53417bcebbb7805a
+         && pip install --no-cache-dir git+https://github.com/toluaina/pgsync@6fab3e4203481fb8460d7d7f48d15149a618e04b
         WORKDIR /pgsync
         COPY entrypoint-pgsync.sh /entrypoint.sh
         RUN chmod +x /entrypoint.sh
@@ -84,6 +84,8 @@ services:
       - opensearch
       - redis
     environment:
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: "INFO"
       PG_HOST: postgres
       PG_PORT: "5432"
       PG_USER: mre_meetsone
@@ -99,6 +101,11 @@ services:
       ELASTICSEARCH_STREAMING_BULK: "True"
       POLL_INTERVAL: "0.2"
       CHECKPOINT_PATH: /pgsync
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
     volumes:
       - ./pgsync:/pgsync
 
