@@ -6,14 +6,20 @@ until PGPASSWORD=mre_meetsone psql -h postgres -U mre_meetsone -d mre_meetsone -
   sleep 2
 done
 
+
 echo "==> Waiting for OpenSearch..."
 for i in {1..60}; do
-  curl -s "http://${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}" >/dev/null && break
+  curl -sf "http://${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}" >/dev/null && break
   sleep 2
 done
 
 echo "==> Bootstrapping schema..."
 bootstrap --config /pgsync/schema.json
 
+touch /pgsync/pgsync.log
+chmod 666 /pgsync/pgsync.log
+
 echo "==> Starting streaming daemon..."
-exec pgsync --config /pgsync/schema.json --daemon -v
+pgsync --config /pgsync/schema.json --daemon -v
+
+exec tail -n +1 -F /pgsync/pgsync.log

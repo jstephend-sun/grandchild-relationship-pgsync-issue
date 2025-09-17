@@ -1,0 +1,904 @@
+2025-09-17 03:25:35:DEBUG:pgsync.sync: poll_db: {'xmin': 779, 'new': {'id': '1822dd9f-4845-4c0a-81c9-570abefecc0e', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:35:DEBUG:pgsync.sync: poll_db: {'xmin': 780, 'new': {'id': 'baa11d46-fc46-4712-b320-48a5c8d72b3e', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:35:DEBUG:pgsync.redisqueue: pop size: 17
+2025-09-17 03:25:35:DEBUG:pgsync.redisqueue: pop size: 0
+2025-09-17 03:25:35:DEBUG:pgsync.sync: _poll_redis: [{'xmin': 764, 'new': {'id': 'subj_4'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Subject', 'schema': 'public'}, {'xmin': 765, 'new': {'id': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Course', 'schema': 'public'}, {'xmin': 766, 'new': {'A': 'course_3', 'B': 'subj_1'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': '_Course_Subject', 'schema': 'public'}, {'xmin': 766, 'new': {'A': 'course_3', 'B': 'subj_4'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': '_Course_Subject', 'schema': 'public'}, {'xmin': 767, 'new': {'id': '50b47d51-4b84-4bb9-9f57-856f47f27a33', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 768, 'new': {'id': 'efa6daa8-98ef-4a63-831b-1eb66904480a', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 769, 'new': {'id': '9b41d7d5-cc8f-4a70-a9ac-4833d7da5fe3', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 770, 'new': {'id': 'd66c7436-5af2-4f13-877f-b8751e4409bf', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 771, 'new': {'id': '0b4fc8df-e654-49a7-88c7-1c2b8308e605', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 772, 'new': {'id': '244c8a2b-7ce5-4ad4-b203-4fceb6fcde7b', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 773, 'new': {'id': '29d2ec81-918a-4654-a3c6-5abbf586859d', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 774, 'new': {'id': '89f41591-57a6-4920-8be2-e3e215bae319', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 775, 'new': {'id': '629e6cfc-2a77-448c-81af-468bff026be4', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 776, 'new': {'id': '25ee3440-8348-4bd3-b317-a85604cd256c', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 777, 'new': {'id': 'b51f2875-acca-4de1-9676-fbf38efa4bda', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 779, 'new': {'id': '1822dd9f-4845-4c0a-81c9-570abefecc0e', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 780, 'new': {'id': 'baa11d46-fc46-4712-b320-48a5c8d72b3e', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}]
+2025-09-17 03:25:35:DEBUG:pgsync.sync: on_publish len 17
+2025-09-17 03:25:35:DEBUG:pgsync.sync: tg_op: INSERT table: public.Subject
+2025-09-17 03:25:35:DEBUG:pgsync.sync: tg_op: INSERT table: public.Course
+2025-09-17 03:25:35:DEBUG:pgsync.sync: tg_op: INSERT table: public._Course_Subject
+2025-09-17 03:25:35:DEBUG:pgsync.sync: tg_op: INSERT table: public.Student
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: node: Node: public.subjects foreign_key_columns ['id']
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: parent_foreign_key_columns: ['B']
+2025-09-17 03:25:35:DEBUG:pgsync.utils: [4mOuter subquery:[0m
+LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, "Subject_1".id, %(JSON_BUILD_OBJECT_4)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id
+   FROM public."Subject" AS "Subject_1",
+        public."_Course_Subject" AS "_Course_Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B")
+2025-09-17 03:25:35:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:35:INFO:pgsync.stdout:           "Subject_1".id
+2025-09-17 03:25:35:INFO:pgsync.stdout:         public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: left_foreign_keys: ['id'] right_foreign_keys ['B']
+2025-09-17 03:25:35:DEBUG:pgsync.utils: [4mInner subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1,
+             public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:35:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:35:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:35:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:35:INFO:pgsync.stdout:              public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:35:DEBUG:pgsync.utils: [4mCombined subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM public."_Course_Subject" AS "_Course_Subject_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1 ON anon_1.id = "_Course_Subject_1"."B"
+GROUP BY "_Course_Subject_1"."A"
+2025-09-17 03:25:35:INFO:pgsync.stdout: [4mCombined subquery:[0m
+2025-09-17 03:25:35:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:35:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:35:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: _children child: Node: public.subjects
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: _children through: Node: public._Course_Subject
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: _children foreign_keys: {'public._Course_Subject': ['A'], 'public.Course': ['id']}
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: _children left_foreign_keys: ['A'] right_foreign_keys ['id']
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: _children. child: Node: public.course
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: _children. foreign_keys: {'public.Student': ['courseid'], 'public.Course': ['id']}
+2025-09-17 03:25:35:INFO:pgsync.querybuilder: _children. left_foreign_keys: ['id'] right_foreign_keys ['courseid']
+2025-09-17 03:25:35:DEBUG:pgsync.utils: [4mQuery:[0m
+SELECT JSON_BUILD_ARRAY(anon_1._keys) AS "JSON_BUILD_ARRAY_1",
+       CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, "Student_1".id, %(JSON_BUILD_OBJECT_3)s, "Student_1".first_name, %(JSON_BUILD_OBJECT_4)s, anon_1.course) AS JSONB) AS "JSON_BUILD_OBJECT_1",
+       "Student_1".id
+FROM public."Student" AS "Student_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_7)s, "Course_1".id, %(JSON_BUILD_OBJECT_8)s, "Course_1".title, %(JSON_BUILD_OBJECT_9)s, anon_2.subjects) AS JSONB) AS course,
+          "Course_1".id AS id
+   FROM public."Course" AS "Course_1"
+   LEFT OUTER JOIN LATERAL
+     (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+             JSON_AGG(anon_3.anon) AS subjects,
+             "_Course_Subject_1"."A" AS "A"
+      FROM public."_Course_Subject" AS "_Course_Subject_1"
+      LEFT OUTER JOIN LATERAL
+        (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+                CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_15)s, "Subject_1".id, %(JSON_BUILD_OBJECT_16)s, "Subject_1".name) AS JSONB) AS anon,
+                "Subject_1".id AS id
+         FROM public."Subject" AS "Subject_1"
+         WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_3 ON anon_3.id = "_Course_Subject_1"."B"
+      GROUP BY "_Course_Subject_1"."A") AS anon_2 ON anon_2."A" = "Course_1".id
+   WHERE "Course_1".id = "Student_1".courseid) AS anon_1 ON anon_1.id = "Student_1".courseid
+WHERE "Student_1".id = %(id_1)s
+  OR "Student_1".id = %(id_2)s
+  OR "Student_1".id = %(id_3)s
+  OR "Student_1".id = %(id_4)s
+  OR "Student_1".id = %(id_5)s
+  OR "Student_1".id = %(id_6)s
+  OR "Student_1".id = %(id_7)s
+  OR "Student_1".id = %(id_8)s
+  OR "Student_1".id = %(id_9)s
+  OR "Student_1".id = %(id_10)s
+  OR "Student_1".id = %(id_11)s
+  OR "Student_1".id = %(id_12)s
+  OR "Student_1".id = %(id_13)s
+2025-09-17 03:25:35:INFO:pgsync.stdout: [4mQuery:[0m
+2025-09-17 03:25:35:INFO:pgsync.stdout:        "Student_1".id
+2025-09-17 03:25:35:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+2025-09-17 03:25:35:INFO:pgsync.stdout:           "Course_1".id AS id
+2025-09-17 03:25:35:INFO:pgsync.stdout:      (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+2025-09-17 03:25:35:INFO:pgsync.stdout:              "_Course_Subject_1"."A" AS "A"
+2025-09-17 03:25:35:INFO:pgsync.stdout:         (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:35:INFO:pgsync.stdout:                 "Subject_1".id AS id
+2025-09-17 03:25:35:INFO:pgsync.stdout: 1)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['50b47d51-4b84-4bb9-9f57-856f47f27a33']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['50b47d51-4b84-4bb9-9f57-856f47f27a33']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '50b47d51-4b84-4bb9-9f57-856f47f27a33'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 2)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['efa6daa8-98ef-4a63-831b-1eb66904480a']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['efa6daa8-98ef-4a63-831b-1eb66904480a']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_4',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': 'efa6daa8-98ef-4a63-831b-1eb66904480a'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 3)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['9b41d7d5-cc8f-4a70-a9ac-4833d7da5fe3']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['9b41d7d5-cc8f-4a70-a9ac-4833d7da5fe3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_5',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '9b41d7d5-cc8f-4a70-a9ac-4833d7da5fe3'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 4)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['d66c7436-5af2-4f13-877f-b8751e4409bf']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['d66c7436-5af2-4f13-877f-b8751e4409bf']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_6',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': 'd66c7436-5af2-4f13-877f-b8751e4409bf'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 5)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['0b4fc8df-e654-49a7-88c7-1c2b8308e605']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['0b4fc8df-e654-49a7-88c7-1c2b8308e605']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_7',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '0b4fc8df-e654-49a7-88c7-1c2b8308e605'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 6)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['244c8a2b-7ce5-4ad4-b203-4fceb6fcde7b']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['244c8a2b-7ce5-4ad4-b203-4fceb6fcde7b']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_8',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '244c8a2b-7ce5-4ad4-b203-4fceb6fcde7b'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 7)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['29d2ec81-918a-4654-a3c6-5abbf586859d']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['29d2ec81-918a-4654-a3c6-5abbf586859d']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_9',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '29d2ec81-918a-4654-a3c6-5abbf586859d'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 8)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['89f41591-57a6-4920-8be2-e3e215bae319']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['89f41591-57a6-4920-8be2-e3e215bae319']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_10',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '89f41591-57a6-4920-8be2-e3e215bae319'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 9)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['629e6cfc-2a77-448c-81af-468bff026be4']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['629e6cfc-2a77-448c-81af-468bff026be4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_11',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '629e6cfc-2a77-448c-81af-468bff026be4'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 10)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['25ee3440-8348-4bd3-b317-a85604cd256c']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['25ee3440-8348-4bd3-b317-a85604cd256c']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_12',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '25ee3440-8348-4bd3-b317-a85604cd256c'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 11)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['b51f2875-acca-4de1-9676-fbf38efa4bda']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['b51f2875-acca-4de1-9676-fbf38efa4bda']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_13',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': 'b51f2875-acca-4de1-9676-fbf38efa4bda'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 12)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['1822dd9f-4845-4c0a-81c9-570abefecc0e']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['1822dd9f-4845-4c0a-81c9-570abefecc0e']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_14',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': '1822dd9f-4845-4c0a-81c9-570abefecc0e'}
+2025-09-17 03:25:35:INFO:pgsync.stdout: 13)
+2025-09-17 03:25:35:INFO:pgsync.stdout: pkeys: ['baa11d46-fc46-4712-b320-48a5c8d72b3e']
+2025-09-17 03:25:35:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Student': {'id': ['baa11d46-fc46-4712-b320-48a5c8d72b3e']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:35:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:35:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'first_name': 'Name_15',
+2025-09-17 03:25:35:INFO:pgsync.stdout:  'id': 'baa11d46-fc46-4712-b320-48a5c8d72b3e'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 806, 'new': {'id': '25a2952a-fbdc-4467-9942-2b361ad8b8c2', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 807, 'new': {'id': 'a48678e4-e2a0-4536-bb56-8c6082c562a1', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 808, 'new': {'id': '688befc6-4766-4ae1-b4e1-c3b9e2abed33', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 809, 'new': {'id': 'e4f9a181-fea2-474f-b502-2458e17651f0', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 810, 'new': {'id': '7437b7b5-d6a0-4f50-86ce-6d4cfe63a252', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.redisqueue: pop size: 5
+2025-09-17 03:25:42:DEBUG:pgsync.redisqueue: pop size: 0
+2025-09-17 03:25:42:DEBUG:pgsync.sync: _poll_redis: [{'xmin': 806, 'new': {'id': '25a2952a-fbdc-4467-9942-2b361ad8b8c2', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 807, 'new': {'id': 'a48678e4-e2a0-4536-bb56-8c6082c562a1', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 808, 'new': {'id': '688befc6-4766-4ae1-b4e1-c3b9e2abed33', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 809, 'new': {'id': 'e4f9a181-fea2-474f-b502-2458e17651f0', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 810, 'new': {'id': '7437b7b5-d6a0-4f50-86ce-6d4cfe63a252', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}]
+2025-09-17 03:25:42:DEBUG:pgsync.sync: on_publish len 5
+2025-09-17 03:25:42:DEBUG:pgsync.sync: tg_op: INSERT table: public.Student
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: node: Node: public.subjects foreign_key_columns ['id']
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: parent_foreign_key_columns: ['B']
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mOuter subquery:[0m
+LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, "Subject_1".id, %(JSON_BUILD_OBJECT_4)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id
+   FROM public."Subject" AS "Subject_1",
+        public."_Course_Subject" AS "_Course_Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B")
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 811, 'new': {'id': 'd13f4317-7901-46cd-9020-6693ebca790a', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Subject_1".id
+2025-09-17 03:25:42:INFO:pgsync.stdout:         public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: left_foreign_keys: ['id'] right_foreign_keys ['B']
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mInner subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1,
+             public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:42:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.stdout:              public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mCombined subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM public."_Course_Subject" AS "_Course_Subject_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1 ON anon_1.id = "_Course_Subject_1"."B"
+GROUP BY "_Course_Subject_1"."A"
+2025-09-17 03:25:42:INFO:pgsync.stdout: [4mCombined subquery:[0m
+2025-09-17 03:25:42:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children child: Node: public.subjects
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children through: Node: public._Course_Subject
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children foreign_keys: {'public._Course_Subject': ['A'], 'public.Course': ['id']}
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children left_foreign_keys: ['A'] right_foreign_keys ['id']
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children. child: Node: public.course
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children. foreign_keys: {'public.Student': ['courseid'], 'public.Course': ['id']}
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children. left_foreign_keys: ['id'] right_foreign_keys ['courseid']
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mQuery:[0m
+SELECT JSON_BUILD_ARRAY(anon_1._keys) AS "JSON_BUILD_ARRAY_1",
+       CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, "Student_1".id, %(JSON_BUILD_OBJECT_3)s, "Student_1".first_name, %(JSON_BUILD_OBJECT_4)s, anon_1.course) AS JSONB) AS "JSON_BUILD_OBJECT_1",
+       "Student_1".id
+FROM public."Student" AS "Student_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_7)s, "Course_1".id, %(JSON_BUILD_OBJECT_8)s, "Course_1".title, %(JSON_BUILD_OBJECT_9)s, anon_2.subjects) AS JSONB) AS course,
+          "Course_1".id AS id
+   FROM public."Course" AS "Course_1"
+   LEFT OUTER JOIN LATERAL
+     (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+             JSON_AGG(anon_3.anon) AS subjects,
+             "_Course_Subject_1"."A" AS "A"
+      FROM public."_Course_Subject" AS "_Course_Subject_1"
+      LEFT OUTER JOIN LATERAL
+        (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+                CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_15)s, "Subject_1".id, %(JSON_BUILD_OBJECT_16)s, "Subject_1".name) AS JSONB) AS anon,
+                "Subject_1".id AS id
+         FROM public."Subject" AS "Subject_1"
+         WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_3 ON anon_3.id = "_Course_Subject_1"."B"
+      GROUP BY "_Course_Subject_1"."A") AS anon_2 ON anon_2."A" = "Course_1".id
+   WHERE "Course_1".id = "Student_1".courseid) AS anon_1 ON anon_1.id = "Student_1".courseid
+WHERE "Student_1".id = %(id_1)s
+  OR "Student_1".id = %(id_2)s
+  OR "Student_1".id = %(id_3)s
+  OR "Student_1".id = %(id_4)s
+  OR "Student_1".id = %(id_5)s
+2025-09-17 03:25:42:INFO:pgsync.stdout: [4mQuery:[0m
+2025-09-17 03:25:42:INFO:pgsync.stdout:        "Student_1".id
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Course_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.stdout:      (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:              "_Course_Subject_1"."A" AS "A"
+2025-09-17 03:25:42:INFO:pgsync.stdout:         (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:                 "Subject_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.stdout: 1)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['25a2952a-fbdc-4467-9942-2b361ad8b8c2']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['25a2952a-fbdc-4467-9942-2b361ad8b8c2']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_16',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': '25a2952a-fbdc-4467-9942-2b361ad8b8c2'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 2)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['a48678e4-e2a0-4536-bb56-8c6082c562a1']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['a48678e4-e2a0-4536-bb56-8c6082c562a1']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_17',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': 'a48678e4-e2a0-4536-bb56-8c6082c562a1'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 3)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['688befc6-4766-4ae1-b4e1-c3b9e2abed33']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['688befc6-4766-4ae1-b4e1-c3b9e2abed33']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_18',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': '688befc6-4766-4ae1-b4e1-c3b9e2abed33'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 4)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['e4f9a181-fea2-474f-b502-2458e17651f0']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['e4f9a181-fea2-474f-b502-2458e17651f0']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_19',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': 'e4f9a181-fea2-474f-b502-2458e17651f0'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 5)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['7437b7b5-d6a0-4f50-86ce-6d4cfe63a252']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['7437b7b5-d6a0-4f50-86ce-6d4cfe63a252']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_20',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': '7437b7b5-d6a0-4f50-86ce-6d4cfe63a252'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 812, 'new': {'id': '274a2e81-55cc-4cbd-8bca-ce6687807e96', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mtxid_current:[0m
+SELECT *
+FROM TXID_CURRENT()
+2025-09-17 03:25:42:INFO:pgsync.stdout: [4mtxid_current:[0m
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 814, 'new': {'id': 'fea06f52-17d1-4008-9000-ccea1aea99ad', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 815, 'new': {'id': '1d428de6-0f2d-42e0-aa22-041560d56a47', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:DEBUG:pgsync.sync: poll_db: {'xmin': 816, 'new': {'id': 'ef011958-2792-42b1-b70a-7ad1605dbb91', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: Sync mre_meetsone:students Xlog: [0] => Db: [27] => Redis: [0] => OpenSearch: [20]...
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mtxid_current:[0m
+SELECT *
+FROM TXID_CURRENT()
+2025-09-17 03:25:42:INFO:pgsync.stdout: [4mtxid_current:[0m
+2025-09-17 03:25:42:DEBUG:pgsync.redisqueue: pop size: 5
+2025-09-17 03:25:42:DEBUG:pgsync.redisqueue: pop size: 0
+2025-09-17 03:25:42:DEBUG:pgsync.sync: _poll_redis: [{'xmin': 811, 'new': {'id': 'd13f4317-7901-46cd-9020-6693ebca790a', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 812, 'new': {'id': '274a2e81-55cc-4cbd-8bca-ce6687807e96', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 814, 'new': {'id': 'fea06f52-17d1-4008-9000-ccea1aea99ad', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 815, 'new': {'id': '1d428de6-0f2d-42e0-aa22-041560d56a47', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 816, 'new': {'id': 'ef011958-2792-42b1-b70a-7ad1605dbb91', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}]
+2025-09-17 03:25:42:DEBUG:pgsync.sync: on_publish len 5
+2025-09-17 03:25:42:DEBUG:pgsync.sync: tg_op: INSERT table: public.Student
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: node: Node: public.subjects foreign_key_columns ['id']
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: parent_foreign_key_columns: ['B']
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mOuter subquery:[0m
+LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, "Subject_1".id, %(JSON_BUILD_OBJECT_4)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id
+   FROM public."Subject" AS "Subject_1",
+        public."_Course_Subject" AS "_Course_Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B")
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Subject_1".id
+2025-09-17 03:25:42:INFO:pgsync.stdout:         public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: left_foreign_keys: ['id'] right_foreign_keys ['B']
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mInner subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1,
+             public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:42:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.stdout:              public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mCombined subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM public."_Course_Subject" AS "_Course_Subject_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1 ON anon_1.id = "_Course_Subject_1"."B"
+GROUP BY "_Course_Subject_1"."A"
+2025-09-17 03:25:42:INFO:pgsync.stdout: [4mCombined subquery:[0m
+2025-09-17 03:25:42:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children child: Node: public.subjects
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children through: Node: public._Course_Subject
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children foreign_keys: {'public._Course_Subject': ['A'], 'public.Course': ['id']}
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children left_foreign_keys: ['A'] right_foreign_keys ['id']
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children. child: Node: public.course
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children. foreign_keys: {'public.Student': ['courseid'], 'public.Course': ['id']}
+2025-09-17 03:25:42:INFO:pgsync.querybuilder: _children. left_foreign_keys: ['id'] right_foreign_keys ['courseid']
+2025-09-17 03:25:42:DEBUG:pgsync.utils: [4mQuery:[0m
+SELECT JSON_BUILD_ARRAY(anon_1._keys) AS "JSON_BUILD_ARRAY_1",
+       CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, "Student_1".id, %(JSON_BUILD_OBJECT_3)s, "Student_1".first_name, %(JSON_BUILD_OBJECT_4)s, anon_1.course) AS JSONB) AS "JSON_BUILD_OBJECT_1",
+       "Student_1".id
+FROM public."Student" AS "Student_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_7)s, "Course_1".id, %(JSON_BUILD_OBJECT_8)s, "Course_1".title, %(JSON_BUILD_OBJECT_9)s, anon_2.subjects) AS JSONB) AS course,
+          "Course_1".id AS id
+   FROM public."Course" AS "Course_1"
+   LEFT OUTER JOIN LATERAL
+     (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+             JSON_AGG(anon_3.anon) AS subjects,
+             "_Course_Subject_1"."A" AS "A"
+      FROM public."_Course_Subject" AS "_Course_Subject_1"
+      LEFT OUTER JOIN LATERAL
+        (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+                CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_15)s, "Subject_1".id, %(JSON_BUILD_OBJECT_16)s, "Subject_1".name) AS JSONB) AS anon,
+                "Subject_1".id AS id
+         FROM public."Subject" AS "Subject_1"
+         WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_3 ON anon_3.id = "_Course_Subject_1"."B"
+      GROUP BY "_Course_Subject_1"."A") AS anon_2 ON anon_2."A" = "Course_1".id
+   WHERE "Course_1".id = "Student_1".courseid) AS anon_1 ON anon_1.id = "Student_1".courseid
+WHERE "Student_1".id = %(id_1)s
+  OR "Student_1".id = %(id_2)s
+  OR "Student_1".id = %(id_3)s
+  OR "Student_1".id = %(id_4)s
+  OR "Student_1".id = %(id_5)s
+2025-09-17 03:25:42:INFO:pgsync.stdout: [4mQuery:[0m
+2025-09-17 03:25:42:INFO:pgsync.stdout:        "Student_1".id
+2025-09-17 03:25:42:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:           "Course_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.stdout:      (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:              "_Course_Subject_1"."A" AS "A"
+2025-09-17 03:25:42:INFO:pgsync.stdout:         (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:42:INFO:pgsync.stdout:                 "Subject_1".id AS id
+2025-09-17 03:25:42:INFO:pgsync.stdout: 1)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['d13f4317-7901-46cd-9020-6693ebca790a']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['d13f4317-7901-46cd-9020-6693ebca790a']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_21',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': 'd13f4317-7901-46cd-9020-6693ebca790a'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 2)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['274a2e81-55cc-4cbd-8bca-ce6687807e96']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['274a2e81-55cc-4cbd-8bca-ce6687807e96']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_22',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': '274a2e81-55cc-4cbd-8bca-ce6687807e96'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 3)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['fea06f52-17d1-4008-9000-ccea1aea99ad']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['fea06f52-17d1-4008-9000-ccea1aea99ad']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_23',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': 'fea06f52-17d1-4008-9000-ccea1aea99ad'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 4)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['1d428de6-0f2d-42e0-aa22-041560d56a47']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['1d428de6-0f2d-42e0-aa22-041560d56a47']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_24',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': '1d428de6-0f2d-42e0-aa22-041560d56a47'}
+2025-09-17 03:25:42:INFO:pgsync.stdout: 5)
+2025-09-17 03:25:42:INFO:pgsync.stdout: pkeys: ['ef011958-2792-42b1-b70a-7ad1605dbb91']
+2025-09-17 03:25:42:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Student': {'id': ['ef011958-2792-42b1-b70a-7ad1605dbb91']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:42:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:42:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'first_name': 'Name_25',
+2025-09-17 03:25:42:INFO:pgsync.stdout:  'id': 'ef011958-2792-42b1-b70a-7ad1605dbb91'}
+2025-09-17 03:25:47:INFO:pgsync.stdout: [4mtxid_current:[0m
+2025-09-17 03:25:47:DEBUG:pgsync.sync: poll_db: {'xmin': 828, 'new': {'id': 'additional_e0ae513d-b77c-4fa6-b1b5-ba6957441126', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:47:INFO:pgsync.stdout: Sync mre_meetsone:students Xlog: [0] => Db: [28] => Redis: [0] => OpenSearch: [25]...
+2025-09-17 03:25:47:DEBUG:pgsync.sync: poll_db: {'xmin': 830, 'new': {'id': 'additional_cd6cbd12-fed8-4aac-b539-3ce3cd3732c2', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:47:DEBUG:pgsync.sync: poll_db: {'xmin': 831, 'new': {'id': 'additional_5ebbf237-555b-42a2-ab34-53bc4c293023', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:47:DEBUG:pgsync.sync: poll_db: {'xmin': 832, 'new': {'id': 'additional_5c2a1366-b7b1-493c-b61e-4c9afd7b3f54', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:47:DEBUG:pgsync.sync: poll_db: {'xmin': 833, 'new': {'id': 'additional_a1261384-9ed6-4827-bbc1-a512a502407b', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:47:DEBUG:pgsync.sync: poll_db: {'xmin': 834, 'new': {'id': 'additional_692a4ec6-b28e-4c7e-b1a7-5f368b7a2835', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:48:DEBUG:pgsync.sync: poll_db: {'xmin': 835, 'new': {'id': 'additional_e979ac93-2263-4101-9a93-0ff7b3cff5c3', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:48:DEBUG:pgsync.sync: poll_db: {'xmin': 836, 'new': {'id': 'additional_746ee502-3fd9-4225-b229-dac610bac4be', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:48:DEBUG:pgsync.sync: poll_db: {'xmin': 837, 'new': {'id': 'additional_870cb4c7-4a5c-4543-8bca-06b0b44838c7', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:48:DEBUG:pgsync.sync: poll_db: {'xmin': 838, 'new': {'id': 'additional_63d5e083-5c0b-4d65-bd45-6a0530e49bc9', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:25:48:DEBUG:pgsync.redisqueue: pop size: 10
+2025-09-17 03:25:48:DEBUG:pgsync.redisqueue: pop size: 0
+2025-09-17 03:25:48:DEBUG:pgsync.sync: _poll_redis: [{'xmin': 828, 'new': {'id': 'additional_e0ae513d-b77c-4fa6-b1b5-ba6957441126', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 830, 'new': {'id': 'additional_cd6cbd12-fed8-4aac-b539-3ce3cd3732c2', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 831, 'new': {'id': 'additional_5ebbf237-555b-42a2-ab34-53bc4c293023', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 832, 'new': {'id': 'additional_5c2a1366-b7b1-493c-b61e-4c9afd7b3f54', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 833, 'new': {'id': 'additional_a1261384-9ed6-4827-bbc1-a512a502407b', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 834, 'new': {'id': 'additional_692a4ec6-b28e-4c7e-b1a7-5f368b7a2835', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 835, 'new': {'id': 'additional_e979ac93-2263-4101-9a93-0ff7b3cff5c3', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 836, 'new': {'id': 'additional_746ee502-3fd9-4225-b229-dac610bac4be', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 837, 'new': {'id': 'additional_870cb4c7-4a5c-4543-8bca-06b0b44838c7', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}, {'xmin': 838, 'new': {'id': 'additional_63d5e083-5c0b-4d65-bd45-6a0530e49bc9', 'courseid': 'course_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}]
+2025-09-17 03:25:48:DEBUG:pgsync.sync: on_publish len 10
+2025-09-17 03:25:48:DEBUG:pgsync.sync: tg_op: INSERT table: public.Student
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: node: Node: public.subjects foreign_key_columns ['id']
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: parent_foreign_key_columns: ['B']
+2025-09-17 03:25:48:DEBUG:pgsync.utils: [4mOuter subquery:[0m
+LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, "Subject_1".id, %(JSON_BUILD_OBJECT_4)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id
+   FROM public."Subject" AS "Subject_1",
+        public."_Course_Subject" AS "_Course_Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B")
+2025-09-17 03:25:48:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:48:INFO:pgsync.stdout:           "Subject_1".id
+2025-09-17 03:25:48:INFO:pgsync.stdout:         public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: left_foreign_keys: ['id'] right_foreign_keys ['B']
+2025-09-17 03:25:48:DEBUG:pgsync.utils: [4mInner subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1,
+             public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:48:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:48:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:48:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:48:INFO:pgsync.stdout:              public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:25:48:DEBUG:pgsync.utils: [4mCombined subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM public."_Course_Subject" AS "_Course_Subject_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1 ON anon_1.id = "_Course_Subject_1"."B"
+GROUP BY "_Course_Subject_1"."A"
+2025-09-17 03:25:48:INFO:pgsync.stdout: [4mCombined subquery:[0m
+2025-09-17 03:25:48:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:25:48:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:48:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: _children child: Node: public.subjects
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: _children through: Node: public._Course_Subject
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: _children foreign_keys: {'public._Course_Subject': ['A'], 'public.Course': ['id']}
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: _children left_foreign_keys: ['A'] right_foreign_keys ['id']
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: _children. child: Node: public.course
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: _children. foreign_keys: {'public.Student': ['courseid'], 'public.Course': ['id']}
+2025-09-17 03:25:48:INFO:pgsync.querybuilder: _children. left_foreign_keys: ['id'] right_foreign_keys ['courseid']
+2025-09-17 03:25:48:DEBUG:pgsync.utils: [4mQuery:[0m
+SELECT JSON_BUILD_ARRAY(anon_1._keys) AS "JSON_BUILD_ARRAY_1",
+       CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, "Student_1".id, %(JSON_BUILD_OBJECT_3)s, "Student_1".first_name, %(JSON_BUILD_OBJECT_4)s, anon_1.course) AS JSONB) AS "JSON_BUILD_OBJECT_1",
+       "Student_1".id
+FROM public."Student" AS "Student_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_7)s, "Course_1".id, %(JSON_BUILD_OBJECT_8)s, "Course_1".title, %(JSON_BUILD_OBJECT_9)s, anon_2.subjects) AS JSONB) AS course,
+          "Course_1".id AS id
+   FROM public."Course" AS "Course_1"
+   LEFT OUTER JOIN LATERAL
+     (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+             JSON_AGG(anon_3.anon) AS subjects,
+             "_Course_Subject_1"."A" AS "A"
+      FROM public."_Course_Subject" AS "_Course_Subject_1"
+      LEFT OUTER JOIN LATERAL
+        (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+                CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_15)s, "Subject_1".id, %(JSON_BUILD_OBJECT_16)s, "Subject_1".name) AS JSONB) AS anon,
+                "Subject_1".id AS id
+         FROM public."Subject" AS "Subject_1"
+         WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_3 ON anon_3.id = "_Course_Subject_1"."B"
+      GROUP BY "_Course_Subject_1"."A") AS anon_2 ON anon_2."A" = "Course_1".id
+   WHERE "Course_1".id = "Student_1".courseid) AS anon_1 ON anon_1.id = "Student_1".courseid
+WHERE "Student_1".id = %(id_1)s
+  OR "Student_1".id = %(id_2)s
+  OR "Student_1".id = %(id_3)s
+  OR "Student_1".id = %(id_4)s
+  OR "Student_1".id = %(id_5)s
+  OR "Student_1".id = %(id_6)s
+  OR "Student_1".id = %(id_7)s
+  OR "Student_1".id = %(id_8)s
+  OR "Student_1".id = %(id_9)s
+  OR "Student_1".id = %(id_10)s
+2025-09-17 03:25:48:INFO:pgsync.stdout: [4mQuery:[0m
+2025-09-17 03:25:48:INFO:pgsync.stdout:        "Student_1".id
+2025-09-17 03:25:48:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+2025-09-17 03:25:48:INFO:pgsync.stdout:           "Course_1".id AS id
+2025-09-17 03:25:48:INFO:pgsync.stdout:      (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+2025-09-17 03:25:48:INFO:pgsync.stdout:              "_Course_Subject_1"."A" AS "A"
+2025-09-17 03:25:48:INFO:pgsync.stdout:         (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:25:48:INFO:pgsync.stdout:                 "Subject_1".id AS id
+2025-09-17 03:25:48:INFO:pgsync.stdout: 1)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_e0ae513d-b77c-4fa6-b1b5-ba6957441126']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_e0ae513d-b77c-4fa6-b1b5-ba6957441126']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_16',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_e0ae513d-b77c-4fa6-b1b5-ba6957441126'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 2)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_cd6cbd12-fed8-4aac-b539-3ce3cd3732c2']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_cd6cbd12-fed8-4aac-b539-3ce3cd3732c2']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_17',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_cd6cbd12-fed8-4aac-b539-3ce3cd3732c2'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 3)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_5ebbf237-555b-42a2-ab34-53bc4c293023']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_5ebbf237-555b-42a2-ab34-53bc4c293023']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_18',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_5ebbf237-555b-42a2-ab34-53bc4c293023'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 4)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_5c2a1366-b7b1-493c-b61e-4c9afd7b3f54']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_5c2a1366-b7b1-493c-b61e-4c9afd7b3f54']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_19',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_5c2a1366-b7b1-493c-b61e-4c9afd7b3f54'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 5)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_a1261384-9ed6-4827-bbc1-a512a502407b']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_a1261384-9ed6-4827-bbc1-a512a502407b']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_20',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_a1261384-9ed6-4827-bbc1-a512a502407b'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 6)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_692a4ec6-b28e-4c7e-b1a7-5f368b7a2835']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_692a4ec6-b28e-4c7e-b1a7-5f368b7a2835']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_21',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_692a4ec6-b28e-4c7e-b1a7-5f368b7a2835'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 7)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_e979ac93-2263-4101-9a93-0ff7b3cff5c3']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_e979ac93-2263-4101-9a93-0ff7b3cff5c3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  Sync mre_meetsone:students Xlog: [0] => Db: [37] => Redis: [0] => OpenSearch: [25]...
+2025-09-17 03:25:48:INFO:pgsync.stdout: 'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             [4mtxid_current:[0m
+2025-09-17 03:25:48:INFO:pgsync.stdout: 'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout: 'first_name': 'Additional_22',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_e979ac93-2263-4101-9a93-0ff7b3cff5c3'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 8)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_746ee502-3fd9-4225-b229-dac610bac4be']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_746ee502-3fd9-4225-b229-dac610bac4be']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_23',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_746ee502-3fd9-4225-b229-dac610bac4be'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 9)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_870cb4c7-4a5c-4543-8bca-06b0b44838c7']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_870cb4c7-4a5c-4543-8bca-06b0b44838c7']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_24',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_870cb4c7-4a5c-4543-8bca-06b0b44838c7'}
+2025-09-17 03:25:48:INFO:pgsync.stdout: 10)
+2025-09-17 03:25:48:INFO:pgsync.stdout: pkeys: ['additional_63d5e083-5c0b-4d65-bd45-6a0530e49bc9']
+2025-09-17 03:25:48:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_3']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Student': {'id': ['additional_63d5e083-5c0b-4d65-bd45-6a0530e49bc9']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            'Subject': {'id': ['subj_1', 'subj_4']},
+2025-09-17 03:25:48:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_3'], 'B': ['subj_1', 'subj_4']}},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'course': {'id': 'course_3',
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_1', 'name': 'Math'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:                          {'id': 'subj_4', 'name': 'Algebra'}],
+2025-09-17 03:25:48:INFO:pgsync.stdout:             'title': 'Basic Calculations'},
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'first_name': 'Additional_25',
+2025-09-17 03:25:48:INFO:pgsync.stdout:  'id': 'additional_63d5e083-5c0b-4d65-bd45-6a0530e49bc9'}
+2025-09-17 03:26:38:DEBUG:pgsync.sync: poll_db: {'xmin': 941, 'new': {'id': 'subj_5'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Subject', 'schema': 'public'}
+2025-09-17 03:26:38:DEBUG:pgsync.sync: poll_db: {'xmin': 941, 'new': {'id': 'course_4'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Course', 'schema': 'public'}
+2025-09-17 03:26:38:DEBUG:pgsync.sync: poll_db: {'xmin': 941, 'new': {'A': 'course_4', 'B': 'subj_5'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': '_Course_Subject', 'schema': 'public'}
+2025-09-17 03:26:38:DEBUG:pgsync.sync: poll_db: {'xmin': 941, 'new': {'A': 'course_4', 'B': 'subj_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': '_Course_Subject', 'schema': 'public'}
+2025-09-17 03:26:38:DEBUG:pgsync.sync: poll_db: {'xmin': 941, 'new': {'id': 'stu_90', 'courseid': 'course_4'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}
+2025-09-17 03:26:38:DEBUG:pgsync.redisqueue: pop size: 5
+2025-09-17 03:26:38:DEBUG:pgsync.sync: _poll_redis: [{'xmin': 941, 'new': {'id': 'subj_5'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Subject', 'schema': 'public'}, {'xmin': 941, 'new': {'id': 'course_4'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Course', 'schema': 'public'}, {'xmin': 941, 'new': {'A': 'course_4', 'B': 'subj_5'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': '_Course_Subject', 'schema': 'public'}, {'xmin': 941, 'new': {'A': 'course_4', 'B': 'subj_3'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': '_Course_Subject', 'schema': 'public'}, {'xmin': 941, 'new': {'id': 'stu_90', 'courseid': 'course_4'}, 'old': None, 'indices': ['students'], 'tg_op': 'INSERT', 'table': 'Student', 'schema': 'public'}]
+2025-09-17 03:26:38:DEBUG:pgsync.redisqueue: pop size: 0
+2025-09-17 03:26:38:DEBUG:pgsync.sync: on_publish len 5
+2025-09-17 03:26:38:DEBUG:pgsync.sync: tg_op: INSERT table: public.Subject
+2025-09-17 03:26:38:DEBUG:pgsync.sync: tg_op: INSERT table: public.Course
+2025-09-17 03:26:39:DEBUG:pgsync.sync: tg_op: INSERT table: public._Course_Subject
+2025-09-17 03:26:39:DEBUG:pgsync.sync: tg_op: INSERT table: public.Student
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: node: Node: public.subjects foreign_key_columns ['id']
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: parent_foreign_key_columns: ['B']
+2025-09-17 03:26:39:DEBUG:pgsync.utils: [4mOuter subquery:[0m
+LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, "Subject_1".id, %(JSON_BUILD_OBJECT_4)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id
+   FROM public."Subject" AS "Subject_1",
+        public."_Course_Subject" AS "_Course_Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B")
+2025-09-17 03:26:39:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:26:39:INFO:pgsync.stdout:           "Subject_1".id
+2025-09-17 03:26:39:INFO:pgsync.stdout:         public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: left_foreign_keys: ['id'] right_foreign_keys ['B']
+2025-09-17 03:26:39:DEBUG:pgsync.utils: [4mInner subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1,
+             public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:26:39:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:26:39:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:26:39:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:26:39:INFO:pgsync.stdout:              public."_Course_Subject" AS "_Course_Subject_1"
+2025-09-17 03:26:39:DEBUG:pgsync.utils: [4mCombined subquery:[0m
+SELECT JSON_AGG(CAST(anon_1._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_1)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_2)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_3)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+       JSON_AGG(anon_1.anon) AS subjects,
+       "_Course_Subject_1"."A"
+FROM public."_Course_Subject" AS "_Course_Subject_1"
+LEFT OUTER JOIN LATERAL
+  (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+          CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, "Subject_1".id, %(JSON_BUILD_OBJECT_7)s, "Subject_1".name) AS JSONB) AS anon,
+          "Subject_1".id AS id
+   FROM public."Subject" AS "Subject_1"
+   WHERE "Subject_1".id = "_Course_Subject_1"."B") AS anon_1 ON anon_1.id = "_Course_Subject_1"."B"
+GROUP BY "_Course_Subject_1"."A"
+2025-09-17 03:26:39:INFO:pgsync.stdout: [4mCombined subquery:[0m
+2025-09-17 03:26:39:INFO:pgsync.stdout:        "_Course_Subject_1"."A"
+2025-09-17 03:26:39:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_4)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:26:39:INFO:pgsync.stdout:           "Subject_1".id AS id
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: _children child: Node: public.subjects
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: _children through: Node: public._Course_Subject
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: _children foreign_keys: {'public._Course_Subject': ['A'], 'public.Course': ['id']}
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: _children left_foreign_keys: ['A'] right_foreign_keys ['id']
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: _children. child: Node: public.course
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: _children. foreign_keys: {'public.Student': ['courseid'], 'public.Course': ['id']}
+2025-09-17 03:26:39:INFO:pgsync.querybuilder: _children. left_foreign_keys: ['id'] right_foreign_keys ['courseid']
+2025-09-17 03:26:39:INFO:pgsync.stdout:        "Student_1".id
+2025-09-17 03:26:39:INFO:pgsync.stdout:   (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_5)s, CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_6)s, JSON_BUILD_ARRAY("Course_1".id)) AS JSONB)) AS JSONB) || CAST(JSON_BUILD_ARRAY(anon_2._keys) AS JSONB) AS _keys,
+2025-09-17 03:26:39:INFO:pgsync.stdout:           "Course_1".id AS id
+2025-09-17 03:26:39:INFO:pgsync.stdout:      (SELECT JSON_AGG(CAST(anon_3._keys AS JSONB) || CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_10)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_11)s, JSON_BUILD_ARRAY("_Course_Subject_1"."A")), JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_12)s, JSON_BUILD_ARRAY("_Course_Subject_1"."B")))) AS JSONB)) AS _keys,
+2025-09-17 03:26:39:INFO:pgsync.stdout:              "_Course_Subject_1"."A" AS "A"
+2025-09-17 03:26:39:INFO:pgsync.stdout:         (SELECT CAST(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_13)s, JSON_BUILD_ARRAY(JSON_BUILD_OBJECT(%(JSON_BUILD_OBJECT_14)s, JSON_BUILD_ARRAY("Subject_1".id)))) AS JSONB) AS _keys,
+2025-09-17 03:26:39:INFO:pgsync.stdout:                 "Subject_1".id AS id
+2025-09-17 03:26:39:INFO:pgsync.stdout: 1)
+2025-09-17 03:26:39:INFO:pgsync.stdout: pkeys: ['stu_90']
+2025-09-17 03:26:39:INFO:pgsync.stdout: {'_meta': {'Course': {'id': ['course_4']},
+2025-09-17 03:26:39:INFO:pgsync.stdout:            'Student': {'id': ['stu_90']},
+2025-09-17 03:26:39:INFO:pgsync.stdout:            'Subject': {'id': ['subj_3', 'subj_5']},
+2025-09-17 03:26:39:INFO:pgsync.stdout:            '_Course_Subject': {'A': ['course_4'], 'B': ['subj_3', 'subj_5']}},
+2025-09-17 03:26:39:INFO:pgsync.stdout:  'course': {'id': 'course_4',
+2025-09-17 03:26:39:INFO:pgsync.stdout:             'subjects': [{'id': 'subj_5', 'name': 'Invasion'},
+2025-09-17 03:26:39:INFO:pgsync.stdout:                          {'id': 'subj_3', 'name': 'History'}],
+2025-09-17 03:26:39:INFO:pgsync.stdout:             'title': 'Mongols'},
+2025-09-17 03:26:39:INFO:pgsync.stdout:  'first_name': 'stu_name_90',
+2025-09-17 03:26:39:INFO:pgsync.stdout:  'id': 'stu_90'}
